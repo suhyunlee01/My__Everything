@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -41,9 +42,10 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbltodoDate = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -132,9 +134,9 @@
             this.lblTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.lblTime.Location = new System.Drawing.Point(598, 263);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(178, 48);
+            this.lblTime.Size = new System.Drawing.Size(197, 48);
             this.lblTime.TabIndex = 132;
-            this.lblTime.Text = "6:00 PM";
+            this.lblTime.Text = "01:00 PM";
             this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblDate
@@ -181,17 +183,17 @@
             this.label3.TabIndex = 126;
             this.label3.Text = "오늘 할 일이";
             // 
-            // label2
+            // lbltodoDate
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Pretendard ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
-            this.label2.Location = new System.Drawing.Point(94, 97);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(156, 29);
-            this.label2.TabIndex = 134;
-            this.label2.Text = "2023. 08. 31";
+            this.lbltodoDate.AutoSize = true;
+            this.lbltodoDate.BackColor = System.Drawing.Color.White;
+            this.lbltodoDate.Font = new System.Drawing.Font("Pretendard ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbltodoDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
+            this.lbltodoDate.Location = new System.Drawing.Point(94, 97);
+            this.lbltodoDate.Name = "lbltodoDate";
+            this.lbltodoDate.Size = new System.Drawing.Size(156, 29);
+            this.lbltodoDate.TabIndex = 134;
+            this.lbltodoDate.Text = "2023. 08. 31";
             // 
             // label6
             // 
@@ -217,6 +219,10 @@
             this.label7.TabIndex = 136;
             this.label7.Text = "개 남았습니다.";
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -225,7 +231,7 @@
             this.ClientSize = new System.Drawing.Size(943, 608);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbltodoDate);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.lblDate);
@@ -241,6 +247,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form3";
             this.Text = "Form3";
+            this.Load += new System.EventHandler(this.Form3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -263,8 +270,9 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbltodoDate;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Timer timer1;
     }
 }

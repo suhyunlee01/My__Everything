@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -48,6 +49,7 @@
             this.lbltemp = new System.Windows.Forms.Label();
             this.btnHomeWeahter = new System.Windows.Forms.Button();
             this.imgTODO = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.QuoteBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgTODO)).BeginInit();
             this.SuspendLayout();
@@ -194,38 +196,40 @@
             // 
             // lblWeek
             // 
-            this.lblWeek.AutoSize = true;
+            this.lblWeek.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblWeek.BackColor = System.Drawing.Color.Transparent;
             this.lblWeek.Font = new System.Drawing.Font("Pretendard Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblWeek.Location = new System.Drawing.Point(588, 254);
+            this.lblWeek.Location = new System.Drawing.Point(632, 254);
             this.lblWeek.Name = "lblWeek";
-            this.lblWeek.Size = new System.Drawing.Size(234, 29);
+            this.lblWeek.Size = new System.Drawing.Size(207, 29);
             this.lblWeek.TabIndex = 60;
-            this.lblWeek.Text = "Monday, Sunset time";
+            this.lblWeek.Text = "Monday";
             this.lblWeek.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblTime
             // 
-            this.lblTime.AutoSize = true;
+            this.lblTime.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblTime.BackColor = System.Drawing.Color.Transparent;
             this.lblTime.Font = new System.Drawing.Font("Pretendard Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblTime.Location = new System.Drawing.Point(738, 222);
+            this.lblTime.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblTime.Location = new System.Drawing.Point(635, 222);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(101, 29);
+            this.lblTime.Size = new System.Drawing.Size(204, 29);
             this.lblTime.TabIndex = 59;
             this.lblTime.Text = "6:00 PM";
             this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblLocation
             // 
-            this.lblLocation.AutoSize = true;
+            this.lblLocation.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblLocation.BackColor = System.Drawing.Color.Transparent;
             this.lblLocation.Font = new System.Drawing.Font("Pretendard Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblLocation.Location = new System.Drawing.Point(690, 190);
+            this.lblLocation.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblLocation.Location = new System.Drawing.Point(635, 190);
             this.lblLocation.Name = "lblLocation";
-            this.lblLocation.Size = new System.Drawing.Size(144, 29);
+            this.lblLocation.Size = new System.Drawing.Size(199, 29);
             this.lblLocation.TabIndex = 58;
-            this.lblLocation.Text = "Seoul, Korea";
+            this.lblLocation.Text = "Incheon, Korea";
             this.lblLocation.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblDate
@@ -280,6 +284,10 @@
             this.imgTODO.TabIndex = 63;
             this.imgTODO.TabStop = false;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -308,6 +316,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form2";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.QuoteBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgTODO)).EndInit();
             this.ResumeLayout(false);
@@ -336,5 +345,6 @@
         private System.Windows.Forms.Label lbltemp;
         private System.Windows.Forms.Button btnHomeWeahter;
         private System.Windows.Forms.PictureBox imgTODO;
+        private System.Windows.Forms.Timer timer1;
     }
 }

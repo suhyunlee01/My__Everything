@@ -3970,4 +3970,7 @@
         15/NGGOMMeZ9cznzxtvoZ2f/AyWSGK/OH9/AAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing">
+    <value>17, 17</value>
+  </data>
 </root>
