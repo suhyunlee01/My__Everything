@@ -229,7 +229,7 @@
             this.lblLocation.Name = "lblLocation";
             this.lblLocation.Size = new System.Drawing.Size(199, 29);
             this.lblLocation.TabIndex = 58;
-            this.lblLocation.Text = "Incheon, Korea";
+            this.lblLocation.Text = "Seoul";
             this.lblLocation.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblDate
@@ -346,5 +346,6 @@
         private System.Windows.Forms.Button btnHomeWeahter;
         private System.Windows.Forms.PictureBox imgTODO;
         private System.Windows.Forms.Timer timer1;
+        
     }
 }

@@ -40,8 +40,8 @@
             this.lblSunRIse = new System.Windows.Forms.Label();
             this.lblSunSetResult = new System.Windows.Forms.Label();
             this.lblSunSet = new System.Windows.Forms.Label();
-            this.lblCloudsResult = new System.Windows.Forms.Label();
-            this.lblClouds = new System.Windows.Forms.Label();
+            this.lblDesResult = new System.Windows.Forms.Label();
+            this.lblDes = new System.Windows.Forms.Label();
             this.lblWindResult = new System.Windows.Forms.Label();
             this.lblWind = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -170,29 +170,29 @@
             this.lblSunSet.TabIndex = 111;
             this.lblSunSet.Text = "SunSet";
             // 
-            // lblCloudsResult
+            // lblDesResult
             // 
-            this.lblCloudsResult.AutoSize = true;
-            this.lblCloudsResult.BackColor = System.Drawing.Color.White;
-            this.lblCloudsResult.Font = new System.Drawing.Font("Pretendard", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblCloudsResult.ForeColor = System.Drawing.Color.Black;
-            this.lblCloudsResult.Location = new System.Drawing.Point(95, 145);
-            this.lblCloudsResult.Name = "lblCloudsResult";
-            this.lblCloudsResult.Size = new System.Drawing.Size(96, 20);
-            this.lblCloudsResult.TabIndex = 114;
-            this.lblCloudsResult.Text = "Few Clouds";
+            this.lblDesResult.AutoSize = true;
+            this.lblDesResult.BackColor = System.Drawing.Color.White;
+            this.lblDesResult.Font = new System.Drawing.Font("Pretendard", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblDesResult.ForeColor = System.Drawing.Color.Black;
+            this.lblDesResult.Location = new System.Drawing.Point(95, 145);
+            this.lblDesResult.Name = "lblDesResult";
+            this.lblDesResult.Size = new System.Drawing.Size(96, 20);
+            this.lblDesResult.TabIndex = 114;
+            this.lblDesResult.Text = "Few Clouds";
             // 
-            // lblClouds
+            // lblDes
             // 
-            this.lblClouds.AutoSize = true;
-            this.lblClouds.BackColor = System.Drawing.Color.White;
-            this.lblClouds.Font = new System.Drawing.Font("Pretendard ExtraBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblClouds.ForeColor = System.Drawing.Color.Black;
-            this.lblClouds.Location = new System.Drawing.Point(94, 110);
-            this.lblClouds.Name = "lblClouds";
-            this.lblClouds.Size = new System.Drawing.Size(84, 25);
-            this.lblClouds.TabIndex = 113;
-            this.lblClouds.Text = "Clouds";
+            this.lblDes.AutoSize = true;
+            this.lblDes.BackColor = System.Drawing.Color.White;
+            this.lblDes.Font = new System.Drawing.Font("Pretendard ExtraBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblDes.ForeColor = System.Drawing.Color.Black;
+            this.lblDes.Location = new System.Drawing.Point(94, 110);
+            this.lblDes.Name = "lblDes";
+            this.lblDes.Size = new System.Drawing.Size(130, 25);
+            this.lblDes.TabIndex = 113;
+            this.lblDes.Text = "Description";
             // 
             // lblWindResult
             // 
@@ -222,6 +222,7 @@
             // 
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSearch.Font = new System.Drawing.Font("Pretendard", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
             this.txtSearch.Location = new System.Drawing.Point(640, 258);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(144, 23);
@@ -351,8 +352,8 @@
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.lblWindResult);
             this.Controls.Add(this.lblWind);
-            this.Controls.Add(this.lblCloudsResult);
-            this.Controls.Add(this.lblClouds);
+            this.Controls.Add(this.lblDesResult);
+            this.Controls.Add(this.lblDes);
             this.Controls.Add(this.lblSunSetResult);
             this.Controls.Add(this.lblSunSet);
             this.Controls.Add(this.lblSunRIseResult);
@@ -389,8 +390,8 @@
         private System.Windows.Forms.Label lblSunRIse;
         private System.Windows.Forms.Label lblSunSetResult;
         private System.Windows.Forms.Label lblSunSet;
-        private System.Windows.Forms.Label lblCloudsResult;
-        private System.Windows.Forms.Label lblClouds;
+        private System.Windows.Forms.Label lblDesResult;
+        private System.Windows.Forms.Label lblDes;
         private System.Windows.Forms.Label lblWindResult;
         private System.Windows.Forms.Label lblWind;
         private System.Windows.Forms.TextBox txtSearch;

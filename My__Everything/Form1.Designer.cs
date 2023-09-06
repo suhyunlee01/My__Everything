@@ -120,7 +120,7 @@
             this.btnMenuUp.FlatAppearance.BorderSize = 0;
             this.btnMenuUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenuUp.Image = ((System.Drawing.Image)(resources.GetObject("btnMenuUp.Image")));
-            this.btnMenuUp.Location = new System.Drawing.Point(53, 23);
+            this.btnMenuUp.Location = new System.Drawing.Point(55, 23);
             this.btnMenuUp.Name = "btnMenuUp";
             this.btnMenuUp.Size = new System.Drawing.Size(27, 27);
             this.btnMenuUp.TabIndex = 20;
@@ -133,7 +133,7 @@
             this.btnMenuUnder.FlatAppearance.BorderSize = 0;
             this.btnMenuUnder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenuUnder.Image = ((System.Drawing.Image)(resources.GetObject("btnMenuUnder.Image")));
-            this.btnMenuUnder.Location = new System.Drawing.Point(56, 26);
+            this.btnMenuUnder.Location = new System.Drawing.Point(58, 26);
             this.btnMenuUnder.Name = "btnMenuUnder";
             this.btnMenuUnder.Size = new System.Drawing.Size(27, 27);
             this.btnMenuUnder.TabIndex = 22;
