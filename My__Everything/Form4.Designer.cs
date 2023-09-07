@@ -54,6 +54,7 @@
             this.lblDate = new System.Windows.Forms.Label();
             this.lbltemp = new System.Windows.Forms.Label();
             this.btnHomeWeahter = new System.Windows.Forms.Button();
+            this.lblAlert = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -336,12 +337,25 @@
             this.btnHomeWeahter.TabIndex = 122;
             this.btnHomeWeahter.UseVisualStyleBackColor = false;
             // 
+            // lblAlert
+            // 
+            this.lblAlert.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblAlert.BackColor = System.Drawing.Color.Transparent;
+            this.lblAlert.Font = new System.Drawing.Font("Pretendard Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblAlert.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblAlert.Location = new System.Drawing.Point(429, 366);
+            this.lblAlert.Name = "lblAlert";
+            this.lblAlert.Size = new System.Drawing.Size(394, 29);
+            this.lblAlert.TabIndex = 128;
+            this.lblAlert.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(943, 608);
+            this.Controls.Add(this.lblAlert);
             this.Controls.Add(this.lblWeek);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.lblLocation);
@@ -404,5 +418,6 @@
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lbltemp;
         private System.Windows.Forms.Button btnHomeWeahter;
+        private System.Windows.Forms.Label lblAlert;
     }
 }

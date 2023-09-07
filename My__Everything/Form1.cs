@@ -17,6 +17,7 @@ namespace My__Everything
         Form4 weatherPage;
 
         bool sidebarExpand;
+
         public Form1()
         {
             InitializeComponent();
@@ -40,6 +41,32 @@ namespace My__Everything
         private void btnMenuUp_Click(object sender, EventArgs e)
         {
             SidebarTimer.Start();
+        }
+
+        private void SidebarTimer_Tick(object sender, EventArgs e)
+        {
+            if (sidebarExpand)
+            {
+                sidebar.Width -= 20;// 1ms마다 20px씩 줄여줌
+
+                //줄어들어서 사이드바가 열려있을 때. 맥시멈 사이즈라면,
+                if (sidebar.Width == sidebar.MinimumSize.Width)
+                {
+                    sidebarExpand = false; //다 줄어들어서 사이드바가 열리지 않은 상태
+                    SidebarTimer.Stop();
+                }
+            }
+            else
+            {
+                sidebar.Width += 20; // 1ms마다 20px씩 늘려줌
+
+                //늘어나서 사이드바가 열려있을 때. 맥시멈 사이즈라면,
+                if (sidebar.Width == sidebar.MaximumSize.Width)
+                {
+                    sidebarExpand = true; //다 늘어나서 사이드바가 열린 상태
+                    SidebarTimer.Stop();
+                }
+            }
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -93,30 +120,5 @@ namespace My__Everything
             sidebar.Width = sidebar.MinimumSize.Width;
         }
 
-        private void SidebarTimer_Tick(object sender, EventArgs e)
-        {
-            if (sidebarExpand)
-            {
-                sidebar.Width -= 10;//10씩 줄여줌
-
-                //줄어들어서 사이드바가 열려있을 때. 맥시멈 사이즈라면,
-                if (sidebar.Width == sidebar.MinimumSize.Width)
-                {
-                    sidebarExpand = false; //다 줄어들어서 사이드바가 열리지 않은 상태
-                    SidebarTimer.Stop();
-                }
-            }
-            else
-            {
-                sidebar.Width += 10; //10씩 늘려줌
-
-                //늘어나서 사이드바가 열려있을 때. 맥시멈 사이즈라면,
-                if (sidebar.Width == sidebar.MaximumSize.Width)
-                {
-                    sidebarExpand = true; //다 늘어나서 사이드바가 열린 상태
-                    SidebarTimer.Stop();
-                }
-            }
-        }
     }
 }

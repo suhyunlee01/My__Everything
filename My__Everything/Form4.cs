@@ -13,6 +13,7 @@ using Newtonsoft.Json;
 using System.Net;
 using System.Security;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Text.RegularExpressions;
 
 namespace My__Everything
 { public delegate void DataGetEventHandler(string data);
@@ -25,18 +26,22 @@ namespace My__Everything
 
             weatherKey = "cd5d65fbfa690a917640d67804c5f2e3";
 
+            //디자인
             lblDate.Parent = btnHomeWeahter;
             lblLocation.Parent = btnHomeWeahter;
             lbltemp.Parent = btnHomeWeahter;
             lblTime.Parent = btnHomeWeahter;
             lblWeek.Parent = btnHomeWeahter;
+            lblAlert.Parent = btnHomeWeahter;
 
             lbltemp.Location = new Point(16, 72);
             lblDate.Location = new Point(36, 180);
 
+            lblAlert.Location = new Point(405, 40);
             lblLocation.Location = new Point(405, 180);
             lblTime.Location = new Point(595, 145);
             lblWeek.Location = new Point(590, 105);
+
 
         }
         private void Form4_Load(object sender, EventArgs e)
@@ -54,17 +59,32 @@ namespace My__Everything
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            //시간 불러오는 함수 호출
             getTime();
         }
 
         public void getWeather() {
-            //using 문 사용해서 리소스 관리
+
+            //API URL 저장
+            //string url = string.Format("https://api.openweathermap.org/data/2.5/weather?q={0}&appid={1}", txtSearch.Text, weatherKey);
+
+
+            //WebClient wc = new WebClient();
+            //string json = wc.DownloadString(url);
+            //Weather.root info = JsonConvert.DeserializeObject<Weather.root>(json);
+            //SetWeatherData(info);
+
+
+            //메모리 누수 방지를 위해 using문으로 코드를 감싸서 dispose 메서드 호출
             using (WebClient wc = new WebClient())
             {
                 string url = string.Format("https://api.openweathermap.org/data/2.5/weather?q={0}&appid={1}", txtSearch.Text, weatherKey);
 
-                string json = wc.DownloadString(url); //WebClient 객체로 DownloadString()메서드를 통해 url데이터를 받아옴. 해당 데이터를 json 변수에 저장.
-                Weather.root Info = JsonConvert.DeserializeObject<Weather.root>(json); //json 파일을 DeserializeObject를 통해 디시리얼라이즈함.
+                /* webclient 클래스의 downloadstring 메서드를 통해서 api에서 데이터를 받아 string으로 받아오기. 주로 Json 파일로 받음 */
+                string json = wc.DownloadString(url);
+
+                /* Json 파일 객체를 매핑할 객체 info / JsonConvert.DeserializeObject<T>() 메서드를 사용하여 JSON 데이터를 디시리얼라이즈 하여 C# 객체로 변환 후 Info 객체에 대입 */
+                Weather.root Info = JsonConvert.DeserializeObject<Weather.root>(json);
 
                 //날씨 정보 출력하는 함수 호출
                 SetWeatherData(Info);
@@ -81,13 +101,13 @@ namespace My__Everything
             lblWindResult.Text = Info.wind.speed.ToString();
             lblDesResult.Text = Info.weather[0].description.ToString();
 
-            lblSunRIseResult.Text = convertSunTime(Info.sys.sunrise).ToShortTimeString();
+            lblSunRIseResult.Text = convertSunTime(Info.sys.sunrise).ToShortTimeString(); //convertSunTime메서드를 통해 DateTime 객체 받아왔음. 따라서 DateTime 메서드를 쓸 수 있다.
             lblSunSetResult.Text = convertSunTime(Info.sys.sunset).ToShortTimeString();
         }
 
 
-        //받은 세컨드를 현지 시간으로 변환함.
-        DateTime convertSunTime(long s)
+        //받은 세컨드(long타입)를 DateTime 객체로 반환함. //string int 등이 아니라 Datetime 형 객체를 반환하기 때문에 private DateTime이라고 함
+        private DateTime convertSunTime(long s)
         {
             //1970년부터 시작한 것이라서 첫 시작을 잡아줌.
             DateTime day = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc).ToLocalTime();
@@ -96,6 +116,8 @@ namespace My__Everything
             return day;
         }
 
+
+        //시간에 따라 이미지 변경하기
         public void changeImg()
         {
 
@@ -113,7 +135,8 @@ namespace My__Everything
             }
         }
 
-        //위치, 날짜 함수들
+
+        //위치, 날짜, 시간 함수들
         public string getWeek()
         {
             lblWeek.Text = DateTime.Now.ToString("dddd", new System.Globalization.CultureInfo("en-US"));
@@ -133,16 +156,28 @@ namespace My__Everything
         }
         public string getLocation()
         {
-            string loc = txtSearch.Text + ", Korea";
-            return loc;
+            lblLocation.Text = txtSearch.Text + ", Korea";
+            return lblLocation.Text;
         }
+
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            //weather api 불러오는 함수 호출
-            getWeather();
-            //위치 설정
-            lblLocation.Text = getLocation();
+            //weather api 불러오는 함수 호출해서 계속 다른 txtSearch.Text(city명)로 api 가져오게 함
+            if (txtSearch.Text != "" && Regex.IsMatch(txtSearch.Text, "^[a-zA-Z]+$")) { //api가 영어로 검색해야해서 검색창에 텍스트가 있고, 영어일 때만 api 불러옴
+                getWeather();
+                getLocation();
+                lblAlert.Text = "";
+            }
+            else
+            {
+                lblAlert.Text = "영어로 지역명을 검색해주세요.";
+            }
+
+            //날짜 및 위치 불러오는 함수 호출
+            getDate();
+            getWeek();
+            
         }
     }
 }

@@ -34,7 +34,7 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblquote = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.QuoteBox = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,6 +51,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.QuoteBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgTODO)).BeginInit();
             this.SuspendLayout();
@@ -99,21 +100,20 @@
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(612, 499);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(93, 19);
+            this.label5.Size = new System.Drawing.Size(83, 19);
             this.label5.TabIndex = 68;
-            this.label5.Text = "Helen Keller";
+            this.label5.Text = "오늘의 명언";
             // 
-            // label4
+            // lblquote
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Font = new System.Drawing.Font("Pretendard SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(612, 414);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(259, 57);
-            this.label4.TabIndex = 67;
-            this.label4.Text = "Walking with a friend in the dark\nis better than walking alone in the\nlight.";
+            this.lblquote.BackColor = System.Drawing.Color.White;
+            this.lblquote.Font = new System.Drawing.Font("Pretendard SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblquote.ForeColor = System.Drawing.Color.Black;
+            this.lblquote.Location = new System.Drawing.Point(612, 407);
+            this.lblquote.Name = "lblquote";
+            this.lblquote.Size = new System.Drawing.Size(259, 85);
+            this.lblquote.TabIndex = 67;
+            this.lblquote.Text = "Walking with a friend in the dark\nis better than walking alone in the\nlight.";
             // 
             // label3
             // 
@@ -255,7 +255,7 @@
             // 
             // timer2
             // 
-            this.timer2.Interval = 2000;
+            this.timer2.Interval = 5000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // label8
@@ -294,6 +294,11 @@
             this.label6.TabIndex = 75;
             this.label6.Text = "해야 할 일";
             // 
+            // timer3
+            // 
+            this.timer3.Interval = 5000;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -307,7 +312,7 @@
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblquote);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.QuoteBox);
             this.Controls.Add(this.label2);
@@ -335,7 +340,7 @@
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblquote;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox QuoteBox;
         private System.Windows.Forms.Label label2;
@@ -352,5 +357,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Timer timer3;
     }
 }

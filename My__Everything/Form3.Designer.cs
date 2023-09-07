@@ -36,7 +36,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblquote = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.ToDoContainer = new System.Windows.Forms.PictureBox();
@@ -47,6 +47,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -112,21 +113,20 @@
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(602, 493);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(93, 19);
+            this.label5.Size = new System.Drawing.Size(83, 19);
             this.label5.TabIndex = 130;
-            this.label5.Text = "Helen Keller";
+            this.label5.Text = "오늘의 명언";
             // 
-            // label4
+            // lblquote
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Font = new System.Drawing.Font("Pretendard SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(602, 418);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(259, 57);
-            this.label4.TabIndex = 129;
-            this.label4.Text = "Walking with a friend in the dark\nis better than walking alone in the\nlight.";
+            this.lblquote.BackColor = System.Drawing.Color.White;
+            this.lblquote.Font = new System.Drawing.Font("Pretendard SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblquote.ForeColor = System.Drawing.Color.Black;
+            this.lblquote.Location = new System.Drawing.Point(602, 418);
+            this.lblquote.Name = "lblquote";
+            this.lblquote.Size = new System.Drawing.Size(259, 57);
+            this.lblquote.TabIndex = 129;
+            this.lblquote.Text = "Walking with a friend in the dark\nis better than walking alone in the\nlight.";
             // 
             // lblTime
             // 
@@ -233,6 +233,11 @@
             this.panel1.Size = new System.Drawing.Size(410, 413);
             this.panel1.TabIndex = 137;
             // 
+            // timer2
+            // 
+            this.timer2.Interval = 5000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -247,7 +252,7 @@
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblquote);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
@@ -275,7 +280,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblquote;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.PictureBox ToDoContainer;
@@ -286,5 +291,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Timer timer2;
     }
 }

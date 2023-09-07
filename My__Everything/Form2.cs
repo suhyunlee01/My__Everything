@@ -56,6 +56,9 @@ namespace My__Everything
             timer1.Start();
             //5초에 한 번씩 지역명 바꾸기
             timer2.Start();
+            //5초에 한 번씩 명언 바꾸기
+            timer3.Start();
+
             //이미지 변경 함수 호출
             changeImg();
             getSeoulWeather();
@@ -66,14 +69,17 @@ namespace My__Everything
             lblTime.Text = weatherPage.getTime();
         }
 
+
+        //도시 다르게 해서 api 불러오기
         private void timer2_Tick(object sender, EventArgs e)
         {
 
-            //위치 텍스트
+            //위치정보 텍스트를 현재 인덱스로 바꿈
             if(lblLocation.Text != city[currentIndex]){
                 lblLocation.Text = city[currentIndex];
             }
-            //api
+
+            //api 도시명 현재 인덱스로 바꿈
             txtSearch = city[currentIndex];
 
             currentIndex++;
@@ -86,6 +92,7 @@ namespace My__Everything
 
             getWeather();
         }
+
 
         public void getSeoulWeather()
         {
@@ -116,11 +123,13 @@ namespace My__Everything
             }
         }
 
+        //현재 온도 저장하는 함수
         public void getTemp(Weather.root Info)
         {
             lbltemp.Text = Math.Ceiling((Info.main.temp - 273.15)).ToString() + "°";
         }
 
+        //이미지 바꾸는 함수
         public void changeImg()
         {
 
@@ -138,5 +147,25 @@ namespace My__Everything
             }
         }
 
+
+
+        //명언 api 불러오는 함수
+        private void getQuote()
+        {
+            using (WebClient wc = new WebClient())
+            {
+                string url = "https://api.adviceslip.com/advice";
+                string json = wc.DownloadString(url);
+                Quotes.root quote = JsonConvert.DeserializeObject<Quotes.root>(json);
+
+                lblquote.Text = quote.slip.advice;
+            }
+        }
+
+        //5초에 한 번 api 불러오기
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            getQuote();
+        }
     }
 }
