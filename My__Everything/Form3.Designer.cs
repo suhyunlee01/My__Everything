@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.btnSearch = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.txtAddTodo = new System.Windows.Forms.TextBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -39,17 +39,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.ToDoContainer = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lbltodoDate = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblTodoNum = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ToDoContainer)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearch
@@ -64,16 +65,17 @@
             this.btnSearch.Size = new System.Drawing.Size(82, 54);
             this.btnSearch.TabIndex = 123;
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // txtSearch
+            // txtAddTodo
             // 
-            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSearch.Font = new System.Drawing.Font("Pretendard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.txtSearch.Location = new System.Drawing.Point(604, 83);
-            this.txtSearch.Multiline = true;
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(172, 103);
-            this.txtSearch.TabIndex = 122;
+            this.txtAddTodo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAddTodo.Font = new System.Drawing.Font("Pretendard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtAddTodo.Location = new System.Drawing.Point(604, 83);
+            this.txtAddTodo.Multiline = true;
+            this.txtAddTodo.Name = "txtAddTodo";
+            this.txtAddTodo.Size = new System.Drawing.Size(172, 103);
+            this.txtAddTodo.TabIndex = 122;
             // 
             // pictureBox4
             // 
@@ -151,21 +153,21 @@
             this.lblDate.TabIndex = 131;
             this.lblDate.Text = "2023. 08. 31";
             // 
-            // pictureBox5
+            // ToDoContainer
             // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(57, 63);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(499, 515);
-            this.pictureBox5.TabIndex = 133;
-            this.pictureBox5.TabStop = false;
+            this.ToDoContainer.Image = ((System.Drawing.Image)(resources.GetObject("ToDoContainer.Image")));
+            this.ToDoContainer.Location = new System.Drawing.Point(57, 63);
+            this.ToDoContainer.Name = "ToDoContainer";
+            this.ToDoContainer.Size = new System.Drawing.Size(499, 515);
+            this.ToDoContainer.TabIndex = 133;
+            this.ToDoContainer.TabStop = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Pretendard ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
-            this.label1.Location = new System.Drawing.Point(804, 23);
+            this.label1.Location = new System.Drawing.Point(808, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 29);
             this.label1.TabIndex = 62;
@@ -195,17 +197,16 @@
             this.lbltodoDate.TabIndex = 134;
             this.lbltodoDate.Text = "2023. 08. 31";
             // 
-            // label6
+            // lblTodoNum
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Pretendard ExtraBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
-            this.label6.Location = new System.Drawing.Point(705, 552);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 25);
-            this.label6.TabIndex = 135;
-            this.label6.Text = "113";
+            this.lblTodoNum.AutoSize = true;
+            this.lblTodoNum.BackColor = System.Drawing.Color.Transparent;
+            this.lblTodoNum.Font = new System.Drawing.Font("Pretendard ExtraBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblTodoNum.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
+            this.lblTodoNum.Location = new System.Drawing.Point(705, 552);
+            this.lblTodoNum.Name = "lblTodoNum";
+            this.lblTodoNum.Size = new System.Drawing.Size(0, 25);
+            this.lblTodoNum.TabIndex = 135;
             // 
             // label7
             // 
@@ -213,15 +214,24 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Pretendard Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label7.ForeColor = System.Drawing.Color.DimGray;
-            this.label7.Location = new System.Drawing.Point(745, 552);
+            this.label7.Location = new System.Drawing.Point(710, 552);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(130, 25);
+            this.label7.Size = new System.Drawing.Size(112, 25);
             this.label7.TabIndex = 136;
-            this.label7.Text = "개 남았습니다.";
+            this.label7.Text = "아직 없어요!";
             // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(99, 129);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(410, 413);
+            this.panel1.TabIndex = 137;
             // 
             // Form3
             // 
@@ -229,10 +239,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(252)))));
             this.ClientSize = new System.Drawing.Size(943, 608);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblTodoNum);
             this.Controls.Add(this.lbltodoDate);
-            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.ToDoContainer);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.label5);
@@ -241,7 +252,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.txtAddTodo);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -251,7 +262,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ToDoContainer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -259,7 +270,7 @@
 
         #endregion
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.TextBox txtAddTodo;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -267,12 +278,13 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Label lblDate;
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox ToDoContainer;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbltodoDate;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblTodoNum;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel panel1;
     }
 }

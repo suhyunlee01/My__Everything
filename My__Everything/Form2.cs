@@ -16,15 +16,22 @@ namespace My__Everything
     {
         private string txtSearch;
         private string weatherKey;
-        private static string locationtxt;
+        private string[] city = { "Seoul", "Busan", "Daegu", "Incheon", "Gwangju",
+            "Daejeon", "Ulsan", "Sejong", "Gyeonggi-do", "Gangwon-do",
+            "Chungcheongbuk-do", "Chungcheongnam-do", "Jeju", "Jeollabuk-do",
+            "Jeollanam-do", "Gyeongsangbuk-do", "Gyeongsangnam-do"};
+        private int currentIndex = 0;
+
         Form4 weatherPage = new Form4();
 
         public Form2()
         {
             InitializeComponent();
 
+            //api
             weatherKey = "cd5d65fbfa690a917640d67804c5f2e3";
-            txtSearch = lblLocation.Text;
+            
+
             lblDate.Parent = btnHomeWeahter;
             lblLocation.Parent = btnHomeWeahter;
             lbltemp.Parent = btnHomeWeahter;
@@ -35,9 +42,23 @@ namespace My__Everything
             lbltemp.Location = new Point(23, 72);
             lblDate.Location = new Point(42, 180);
 
-            lblLocation.Location = new Point(600, 180);
+            lblLocation.Location = new Point(384, 180);
             lblTime.Location = new Point(595, 145);
             lblWeek.Location = new Point(590, 105);
+        }
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            //위치, 날짜 정보 함수 호출
+            //lblLocation.Text = weatherPage.getLocation();
+            lblWeek.Text = weatherPage.getWeek();
+            lblDate.Text = weatherPage.getDate();
+            //가져온 시간부터 1초씩 증가
+            timer1.Start();
+            //5초에 한 번씩 지역명 바꾸기
+            timer2.Start();
+            //이미지 변경 함수 호출
+            changeImg();
+            getSeoulWeather();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -45,20 +66,41 @@ namespace My__Everything
             lblTime.Text = weatherPage.getTime();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void timer2_Tick(object sender, EventArgs e)
         {
-            //위치, 날짜 정보 함수 호출
-            lblLocation.Text = weatherPage.getLocation();
 
-            lblWeek.Text = weatherPage.getWeek();
-            lblDate.Text = weatherPage.getDate();
-            //가져온 시간부터 1초씩 증가
-            timer1.Start();
-            //이미지 변경 함수 호출
-            changeImg();
+            //위치 텍스트
+            if(lblLocation.Text != city[currentIndex]){
+                lblLocation.Text = city[currentIndex];
+            }
+            //api
+            txtSearch = city[currentIndex];
+
+            currentIndex++;
+
+            //배열 끝나면 다시 0으로
+            if (currentIndex >= city.Length)
+            {
+                currentIndex = 0;
+            }
+
             getWeather();
         }
 
+        public void getSeoulWeather()
+        {
+            //using 문 사용해서 리소스 관리
+            using (WebClient wc = new WebClient())
+            {
+                string url = string.Format("https://api.openweathermap.org/data/2.5/weather?q=Seoul&appid={0}", weatherKey);
+
+                string json = wc.DownloadString(url); //WebClient 객체로 DownloadString()메서드를 통해 url데이터를 받아옴. 해당 데이터를 json 변수에 저장.
+                Weather.root Info = JsonConvert.DeserializeObject<Weather.root>(json); //json 파일을 DeserializeObject를 통해 디시리얼라이즈함.
+
+                //날씨 정보 출력하는 함수 호출
+                getTemp(Info);
+            }
+        }
         public void getWeather()
         {
             //using 문 사용해서 리소스 관리
@@ -96,10 +138,5 @@ namespace My__Everything
             }
         }
 
-        private void btnHomeWeahter_Click(object sender, EventArgs e)
-        {
-            //위치, 날짜 정보 함수 호출
-            lblLocation.Text = weatherPage.getLocation();
-        }
     }
 }

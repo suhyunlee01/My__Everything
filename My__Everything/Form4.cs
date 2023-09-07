@@ -19,8 +19,6 @@ namespace My__Everything
     public partial class Form4 : Form
     {
         private string weatherKey;
-        public DataGetEventHandler DataSendEvent;
-
         public Form4()
         {
             InitializeComponent();
@@ -36,7 +34,7 @@ namespace My__Everything
             lbltemp.Location = new Point(16, 72);
             lblDate.Location = new Point(36, 180);
 
-            lblLocation.Location = new Point(600, 180);
+            lblLocation.Location = new Point(405, 180);
             lblTime.Location = new Point(595, 145);
             lblWeek.Location = new Point(590, 105);
 

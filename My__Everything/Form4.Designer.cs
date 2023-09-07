@@ -65,7 +65,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Pretendard ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
-            this.label1.Location = new System.Drawing.Point(777, 24);
+            this.label1.Location = new System.Drawing.Point(781, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 29);
             this.label1.TabIndex = 62;
@@ -288,9 +288,9 @@
             this.lblLocation.BackColor = System.Drawing.Color.Transparent;
             this.lblLocation.Font = new System.Drawing.Font("Pretendard Light", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblLocation.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblLocation.Location = new System.Drawing.Point(635, 453);
+            this.lblLocation.Location = new System.Drawing.Point(440, 453);
             this.lblLocation.Name = "lblLocation";
-            this.lblLocation.Size = new System.Drawing.Size(199, 29);
+            this.lblLocation.Size = new System.Drawing.Size(394, 29);
             this.lblLocation.TabIndex = 125;
             this.lblLocation.Text = "Seoul, Korea";
             this.lblLocation.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
