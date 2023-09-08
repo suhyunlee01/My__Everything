@@ -163,16 +163,22 @@ namespace My__Everything
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            //weather api 불러오는 함수 호출해서 계속 다른 txtSearch.Text(city명)로 api 가져오게 함
-            if (txtSearch.Text != "" && Regex.IsMatch(txtSearch.Text, "^[a-zA-Z]+$")) { //api가 영어로 검색해야해서 검색창에 텍스트가 있고, 영어일 때만 api 불러옴
-                getWeather();
-                getLocation();
-                lblAlert.Text = "";
+            try {
+                //weather api 불러오는 함수 호출해서 계속 다른 txtSearch.Text(city명)로 api 가져오게 함
+                if (txtSearch.Text != "" && Regex.IsMatch(txtSearch.Text, "^[a-zA-Z]+$"))
+                { //api가 영어로 검색해야해서 검색창에 텍스트가 있고, 영어일 때만 api 불러옴
+                    getWeather();
+                    getLocation();
+                    lblAlert.Text = "";
+                }
+                else
+                {
+                    lblAlert.Text = "영어로 지역명을 검색해주세요.";
+                }
+            } catch {
+                lblAlert.Text = "잘못된 지역명입니다.";
             }
-            else
-            {
-                lblAlert.Text = "영어로 지역명을 검색해주세요.";
-            }
+            
 
             //날짜 및 위치 불러오는 함수 호출
             getDate();
