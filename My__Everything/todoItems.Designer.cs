@@ -36,7 +36,7 @@
             // lblToDo
             // 
             this.lblToDo.AutoSize = true;
-            this.lblToDo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(252)))));
+            this.lblToDo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.lblToDo.Font = new System.Drawing.Font("Pretendard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblToDo.ForeColor = System.Drawing.Color.Black;
             this.lblToDo.Location = new System.Drawing.Point(60, 15);
@@ -47,7 +47,7 @@
             // 
             // btnChk
             // 
-            this.btnChk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(252)))));
+            this.btnChk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.btnChk.FlatAppearance.BorderSize = 0;
             this.btnChk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChk.Image = ((System.Drawing.Image)(resources.GetObject("btnChk.Image")));
@@ -63,7 +63,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(252)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.Controls.Add(this.btnChk);
             this.Controls.Add(this.lblToDo);
             this.Name = "todoItems";

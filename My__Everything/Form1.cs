@@ -120,5 +120,9 @@ namespace My__Everything
             sidebar.Width = sidebar.MinimumSize.Width;
         }
 
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

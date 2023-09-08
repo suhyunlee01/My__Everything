@@ -39,6 +39,7 @@
             this.btnMenuUp = new System.Windows.Forms.Button();
             this.btnMenuUnder = new System.Windows.Forms.Button();
             this.SidebarTimer = new System.Windows.Forms.Timer(this.components);
+            this.btnExit = new System.Windows.Forms.Button();
             this.sidebar.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -46,7 +47,7 @@
             // 
             // sidebar
             // 
-            this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(255)))));
+            this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(235)))), ((int)(((byte)(255)))));
             this.sidebar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.sidebar.Controls.Add(this.panel1);
             this.sidebar.Location = new System.Drawing.Point(0, 0);
@@ -57,14 +58,16 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(235)))), ((int)(((byte)(255)))));
             this.panel1.Controls.Add(this.btnLocation);
+            this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.btnHome);
             this.panel1.Controls.Add(this.btnCalander);
             this.panel1.Controls.Add(this.pictureBox6);
             this.panel1.Controls.Add(this.btnMenuUp);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(140, 496);
+            this.panel1.Size = new System.Drawing.Size(140, 580);
             this.panel1.TabIndex = 0;
             // 
             // btnLocation
@@ -73,7 +76,7 @@
             this.btnLocation.FlatAppearance.BorderSize = 0;
             this.btnLocation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLocation.Image = ((System.Drawing.Image)(resources.GetObject("btnLocation.Image")));
-            this.btnLocation.Location = new System.Drawing.Point(56, 383);
+            this.btnLocation.Location = new System.Drawing.Point(56, 377);
             this.btnLocation.Name = "btnLocation";
             this.btnLocation.Size = new System.Drawing.Size(27, 27);
             this.btnLocation.TabIndex = 24;
@@ -86,7 +89,7 @@
             this.btnHome.FlatAppearance.BorderSize = 0;
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
-            this.btnHome.Location = new System.Drawing.Point(56, 217);
+            this.btnHome.Location = new System.Drawing.Point(56, 211);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(27, 27);
             this.btnHome.TabIndex = 23;
@@ -99,7 +102,7 @@
             this.btnCalander.FlatAppearance.BorderSize = 0;
             this.btnCalander.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCalander.Image = ((System.Drawing.Image)(resources.GetObject("btnCalander.Image")));
-            this.btnCalander.Location = new System.Drawing.Point(56, 301);
+            this.btnCalander.Location = new System.Drawing.Point(56, 295);
             this.btnCalander.Name = "btnCalander";
             this.btnCalander.Size = new System.Drawing.Size(27, 27);
             this.btnCalander.TabIndex = 22;
@@ -109,7 +112,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(31, 144);
+            this.pictureBox6.Location = new System.Drawing.Point(32, 133);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(82, 338);
             this.pictureBox6.TabIndex = 21;
@@ -129,7 +132,7 @@
             // 
             // btnMenuUnder
             // 
-            this.btnMenuUnder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(252)))));
+            this.btnMenuUnder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.btnMenuUnder.FlatAppearance.BorderSize = 0;
             this.btnMenuUnder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenuUnder.Image = ((System.Drawing.Image)(resources.GetObject("btnMenuUnder.Image")));
@@ -144,6 +147,21 @@
             // 
             this.SidebarTimer.Interval = 1;
             this.SidebarTimer.Tick += new System.EventHandler(this.SidebarTimer_Tick);
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.Transparent;
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Pretendard", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.Location = new System.Drawing.Point(35, 544);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(75, 29);
+            this.btnExit.TabIndex = 1;
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // Form1
             // 
@@ -177,6 +195,7 @@
         private System.Windows.Forms.Button btnMenuUp;
         private System.Windows.Forms.Button btnMenuUnder;
         private System.Windows.Forms.Timer SidebarTimer;
+        private System.Windows.Forms.Button btnExit;
     }
 }
 
