@@ -22,5 +22,17 @@ namespace My__Everything.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("\"cd5d65fbfa690a917640d67804c5f2e3\"")]
+        public string apiKey {
+            get {
+                return ((string)(this["apiKey"]));
+            }
+            set {
+                this["apiKey"] = value;
+            }
+        }
     }
 }

@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiKeyClass.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +119,7 @@
     <EmbeddedResource Include="todoItems.resx">
       <DependentUpon>todoItems.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Data\api_key.json" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -14,17 +14,23 @@ using System.Net;
 using System.Security;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Text.RegularExpressions;
+using System.IO;
 
 namespace My__Everything
 { public delegate void DataGetEventHandler(string data);
     public partial class Form4 : Form
     {
         private string weatherKey;
+        string jsonFilePath = "C:\\Users\\KOSTA\\Desktop\\새 폴더\\My__Everything\\My__Everything\\Data\\api_key.json";
+
         public Form4()
         {
             InitializeComponent();
 
-            weatherKey = "cd5d65fbfa690a917640d67804c5f2e3";
+            ApiKeyClass apiKeys;
+            string jsonText = File.ReadAllText(jsonFilePath);
+            apiKeys = JsonConvert.DeserializeObject<ApiKeyClass>(jsonText);
+            weatherKey = apiKeys.ApiKey.ToString();
 
             //디자인
             lblDate.Parent = btnHomeWeahter;

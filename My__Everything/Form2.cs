@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
 using System.Net;
+using System.IO;
 
 namespace My__Everything
 {
     public partial class Form2 : Form
     {
+        string jsonFilePath = "C:\\Users\\KOSTA\\Desktop\\새 폴더\\My__Everything\\My__Everything\\Data\\api_key.json";
         private string txtSearch;
         private string weatherKey;
         private string[] city = { "Seoul", "Busan", "Daegu", "Incheon", "Gwangju",
@@ -29,8 +31,11 @@ namespace My__Everything
             InitializeComponent();
 
             //api
-            weatherKey = "cd5d65fbfa690a917640d67804c5f2e3";
-            
+            ApiKeyClass apiKeys;
+            string jsonText = File.ReadAllText(jsonFilePath);
+            apiKeys = JsonConvert.DeserializeObject<ApiKeyClass>(jsonText);
+            weatherKey = apiKeys.ApiKey.ToString();
+
 
             lblDate.Parent = btnHomeWeahter;
             lblLocation.Parent = btnHomeWeahter;
