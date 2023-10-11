@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(todoItems));
             this.lblToDo = new System.Windows.Forms.Label();
             this.btnChk = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblToDo
@@ -58,12 +59,26 @@
             this.btnChk.UseVisualStyleBackColor = false;
             this.btnChk.Click += new System.EventHandler(this.btnChk_Click);
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Image = global::My__Everything.Properties.Resources.deleteBTN;
+            this.btnDelete.Location = new System.Drawing.Point(330, 12);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(60, 20);
+            this.btnDelete.TabIndex = 144;
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // todoItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnChk);
             this.Controls.Add(this.lblToDo);
             this.Name = "todoItems";
@@ -77,5 +92,6 @@
 
         private System.Windows.Forms.Label lblToDo;
         private System.Windows.Forms.Button btnChk;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

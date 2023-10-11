@@ -7,9 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.NetworkInformation;
+
 
 namespace My__Everything
 {
+
     public partial class Form1 : Form
     {
         Form2 homePage;

@@ -28,5 +28,10 @@ namespace My__Everything
                 this.Hide();
             }
         }
+
+        private void loadingPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
