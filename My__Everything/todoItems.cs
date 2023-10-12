@@ -20,11 +20,18 @@ namespace My__Everything
         }
 
         public todoItems(string Text) //생성자를 통해 객체를 생성하는 곳에서 Text 데이터를 받아옴
+        public int Id;
+        public string Todo;
+        //생성자를 통해 객체를 생성하는 곳에서 데이터 받아오기
+        public todoItems(string todo, int id)
         {
             InitializeComponent();
 
-            lblToDo.Text = Text;
+            lblToDo.Text = todo;
             btnChk.Image = Properties.Resources.todonot;
+
+            Id = id;
+            Todo = todo;
         }
 
         private void btnChk_Click(object sender, EventArgs e)
