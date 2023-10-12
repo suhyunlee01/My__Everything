@@ -30,14 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            this.label7 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.lblquote = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.QuoteBox = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblWeek = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
@@ -45,52 +41,12 @@
             this.lblDate = new System.Windows.Forms.Label();
             this.lbltemp = new System.Windows.Forms.Label();
             this.btnHomeWeahter = new System.Windows.Forms.Button();
-            this.imgTODO = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.label8 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.QuoteBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgTODO)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.White;
-            this.label7.Font = new System.Drawing.Font("Pretendard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(133, 447);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 19);
-            this.label7.TabIndex = 76;
-            this.label7.Text = "해야 할 일";
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.White;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.Location = new System.Drawing.Point(97, 478);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(27, 27);
-            this.button7.TabIndex = 74;
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.White;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.Location = new System.Drawing.Point(97, 442);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(27, 27);
-            this.button6.TabIndex = 73;
-            this.button6.UseVisualStyleBackColor = false;
             // 
             // label5
             // 
@@ -135,18 +91,6 @@
             this.QuoteBox.Size = new System.Drawing.Size(308, 246);
             this.QuoteBox.TabIndex = 65;
             this.QuoteBox.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Pretendard ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
-            this.label2.Location = new System.Drawing.Point(94, 360);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 29);
-            this.label2.TabIndex = 64;
-            this.label2.Text = "TO DO";
             // 
             // label1
             // 
@@ -238,17 +182,6 @@
             this.btnHomeWeahter.TabIndex = 55;
             this.btnHomeWeahter.UseVisualStyleBackColor = false;
             // 
-            // imgTODO
-            // 
-            this.imgTODO.BackColor = System.Drawing.Color.Transparent;
-            this.imgTODO.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.imgTODO.Image = ((System.Drawing.Image)(resources.GetObject("imgTODO.Image")));
-            this.imgTODO.Location = new System.Drawing.Point(59, 329);
-            this.imgTODO.Name = "imgTODO";
-            this.imgTODO.Size = new System.Drawing.Size(498, 246);
-            this.imgTODO.TabIndex = 63;
-            this.imgTODO.TabStop = false;
-            // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
@@ -258,46 +191,19 @@
             this.timer2.Interval = 5000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.White;
-            this.label8.Font = new System.Drawing.Font("Pretendard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(132, 482);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(73, 19);
-            this.label8.TabIndex = 77;
-            this.label8.Text = "해야 할 일";
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.White;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.Location = new System.Drawing.Point(98, 407);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(27, 27);
-            this.button5.TabIndex = 72;
-            this.button5.UseVisualStyleBackColor = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Font = new System.Drawing.Font("Pretendard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(133, 412);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 19);
-            this.label6.TabIndex = 75;
-            this.label6.Text = "해야 할 일";
-            // 
             // timer3
             // 
             this.timer3.Interval = 5000;
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(59, 329);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(505, 246);
+            this.panel1.TabIndex = 138;
             // 
             // Form2
             // 
@@ -305,17 +211,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(943, 608);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblquote);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.QuoteBox);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblWeek);
             this.Controls.Add(this.lblTime);
@@ -323,27 +223,21 @@
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.lbltemp);
             this.Controls.Add(this.btnHomeWeahter);
-            this.Controls.Add(this.imgTODO);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.QuoteBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgTODO)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblquote;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox QuoteBox;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblWeek;
         private System.Windows.Forms.Label lblTime;
@@ -351,12 +245,9 @@
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lbltemp;
         private System.Windows.Forms.Button btnHomeWeahter;
-        private System.Windows.Forms.PictureBox imgTODO;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.Panel panel1;
     }
 }

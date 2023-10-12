@@ -170,7 +170,7 @@
             this.ClientSize = new System.Drawing.Size(947, 612);
             this.Controls.Add(this.sidebar);
             this.Controls.Add(this.btnMenuUnder);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.IsMdiContainer = true;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

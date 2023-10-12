@@ -63,11 +63,11 @@ namespace My__Everything
                     }
                 }
             }
-        }
-        public int GetRecordId()
-        {
-            int dbID = 1;
-            return dbID;
+            this.Parent.Controls.Remove(this);
+
+            Form3 form3 = new Form3();
+            form3.CalcTodoNum();
+
         }
     }
 }

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Newtonsoft.Json;
 using System.Net;
 using System.IO;
+using MySql.Data.MySqlClient;
 
 namespace My__Everything
 {
@@ -67,6 +68,46 @@ namespace My__Everything
             //이미지 변경 함수 호출
             changeImg();
             getSeoulWeather();
+
+            string connectionString = "Server=localhost;Database=todo_db;Uid=root;Pwd=1234;";
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                //서버 연결
+                connection.Open();
+
+                //SELECT
+                //myeverything_todolist 테이블의 모든 데이터를 읽어옴
+                string SelectQuery = "SELECT * FROM myeverything_todolist";
+                using (MySqlCommand Select = new MySqlCommand(SelectQuery, connection))
+                {
+                    using (MySqlDataReader reader = Select.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            // 각 행의 데이터를 읽어옴
+                            int id = Convert.ToInt32(reader["id"]);
+                            string todoItem = reader["todo"].ToString();
+                            addItems(todoItem, id);
+                        }
+                    }
+                }
+            }
+        }
+        public void addItems(string todoItem, int id)
+        {
+            int gap = 10;
+            todoItems items;
+            //투두 아이템 컨트롤 객체 선언, 생성자에 텍스트 보내기
+            items = new todoItems(todoItem, id);
+
+            items.Parent = panel1;
+
+            //컨트롤의 상단 위치
+            items.Top = gap;
+
+            //다른 items들의 상단 위치(y축을) 10씩 늘려서 아래로 보냄
+            gap = (items.Top + items.Height + 10);
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
