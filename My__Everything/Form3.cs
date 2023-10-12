@@ -22,11 +22,20 @@ namespace My__Everything
         todoItems items;
         private int gap = 10;
 
+        //todoItems 클래스의 인스턴스를 요소로 가지는 리스트를 _todoItems라고 정의
+        private List<todoItems> _todoItems;
+
         public Form3()
         {
             InitializeComponent();
             weatherPage = new Form4();
             connectionString = "Server=localhost;Database=todo_db;Uid=root;Pwd=1234;";
+        }
+
+        // GetTodoItemsFromMySQL()메소드로 반환해온 결과를 저장한 리스트 반환
+        public List<todoItems> GetTodoItems()
+        {
+            return _todoItems;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -49,19 +58,22 @@ namespace My__Everything
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
+                //서버 연결
                 connection.Open();
 
-                // myeverything_todolist 테이블의 모든 데이터를 읽어옴
-                string selectQuery = "SELECT * FROM myeverything_todolist";
-                using (MySqlCommand selectCommand = new MySqlCommand(selectQuery, connection))
+                //SELECT
+                //myeverything_todolist 테이블의 모든 데이터를 읽어옴
+                string SelectQuery = "SELECT * FROM myeverything_todolist";
+                using (MySqlCommand Select = new MySqlCommand(SelectQuery, connection))
                 {
-                    using (MySqlDataReader reader = selectCommand.ExecuteReader())
+                    using (MySqlDataReader reader = Select.ExecuteReader())
                     {
                         while (reader.Read())
                         {
                             // 각 행의 데이터를 읽어옴
+                            int id = Convert.ToInt32(reader["id"]);
                             string todoItem = reader["todo"].ToString();
-                            addItems(todoItem);
+                            addItems(todoItem, id);
                         }
                     }
                 }
@@ -69,10 +81,10 @@ namespace My__Everything
 
 
         }
-        public void addItems(string Text)
+        public void addItems(string todoItem, int id)
         {
             //투두 아이템 컨트롤 객체 선언, 생성자에 텍스트 보내기
-            items = new todoItems(Text);
+            items = new todoItems(todoItem, id);
 
             items.Parent = panel1;
 
@@ -89,42 +101,55 @@ namespace My__Everything
         //버튼 클릭 시 todoitem 추가
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            //텍스트가 비어있지 않을 때만 데이터베이스에 넣을거임~
             if (txtAddTodo.Text != "")
             {
-
+                // 이 블록이 끝나면 connection이 자동으로 닫히고 리소스가 해제되게 함.
+                //즉 using 블록을 벗어날 때 connection 객체의 Dispose() 메서드가 자동으로 호출되어 리소스를 해제
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
+                    //서버 연결
                     connection.Open();
 
-                    // txtAddTodo.Text의 값을 myeverything_todolist 테이블의 todo 열에 삽입
-                    string insertQuery = "INSERT INTO myeverything_todolist (todo) VALUES (@todo)";
 
-                    using (MySqlCommand insertCommand = new MySqlCommand(insertQuery, connection))
+                    //INSERT
+                    // txtAddTodo.Text의 값을 myeverything_todolist 테이블의 todo 열에 삽입
+                    string InsertQuery = "INSERT INTO myeverything_todolist (todo) VALUES (@todo)";
+
+                    using (MySqlCommand Insert = new MySqlCommand(InsertQuery, connection))
                     {
-                        insertCommand.Parameters.AddWithValue("@todo", txtAddTodo.Text);
-                        int rowsAffected = insertCommand.ExecuteNonQuery();
+                        Insert.Parameters.AddWithValue("@todo", txtAddTodo.Text);
+
+                        //해당 쿼리문을 실행해서 영향받은 행 반환하는 메서드 ExecuteNonQuery()
+                        int rowsAffected = Insert.ExecuteNonQuery();
 
                         if (rowsAffected > 0)
                         {
-                            Console.WriteLine("데이터가 성공적으로 삽입되었습니다.");
+                            Console.WriteLine("데이터가 INSERT 성공.");
                         }
                         else
                         {
-                            Console.WriteLine("데이터를 삽입하는 데 실패했습니다.");
+                            Console.WriteLine("데이터 INSERT 실패.");
                         }
                     }
 
-                    // myeverything_todolist 테이블의 모든 데이터를 읽어옴
-                    string selectQuery = "SELECT * FROM myeverything_todolist";
-                    using (MySqlCommand selectCommand = new MySqlCommand(selectQuery, connection))
+
+                    //SELECT
+                    //myeverything_todolist 테이블의 id와 todo를 가져오되, id가 가장 마지막의 것만 가져옴
+                    string SelectQuery = "SELECT id, todo FROM myeverything_todolist ORDER BY id DESC LIMIT 1;";
+                    using (MySqlCommand Select = new MySqlCommand(SelectQuery, connection))
                     {
-                        using (MySqlDataReader reader = selectCommand.ExecuteReader())
+                        using (MySqlDataReader reader = Select.ExecuteReader())
                         {
                             while (reader.Read())
                             {
-                                // 각 행의 데이터를 읽어옴
-                                string todoItem = reader["todo"].ToString();
-                                addItems(todoItem);
+                                //id와 todoItem 의 데이터를 읽어옴
+
+                                //정수로 변환
+                                int id = Convert.ToInt32(reader["id"]);
+                                //문자열로 변환
+                                string todo = reader["todo"].ToString();
+                                addItems(todo, id);
                             }
                         }
                     }
@@ -138,7 +163,7 @@ namespace My__Everything
         }
 
         //todo아이템 개수 세어서 몇 개 남았는지 프린트하는 함수
-        private void CalcTodoNum()
+        public void CalcTodoNum()
         {
             // panel1의 자식 컨트롤 중에서 todoItems 클래스 형식의 객체
             label7.Text = panel1.Controls.OfType<todoItems>().Count().ToString() + " 개 남았습니다.";
@@ -146,7 +171,7 @@ namespace My__Everything
 
 
         //명언 api 불러오는 함수
-        private void getQuote()
+        public void getQuote()
         {
             using(WebClient wc = new WebClient())
             {
