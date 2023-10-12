@@ -41,6 +41,7 @@
             this.lblToDo.Font = new System.Drawing.Font("Pretendard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblToDo.ForeColor = System.Drawing.Color.Black;
             this.lblToDo.Location = new System.Drawing.Point(60, 15);
+            this.lblToDo.MaximumSize = new System.Drawing.Size(210, 0);
             this.lblToDo.Name = "lblToDo";
             this.lblToDo.Size = new System.Drawing.Size(73, 19);
             this.lblToDo.TabIndex = 142;

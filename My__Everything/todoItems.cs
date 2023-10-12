@@ -14,12 +14,6 @@ namespace My__Everything
 
     public partial class todoItems : UserControl
     {
-        public todoItems()
-        {
-            InitializeComponent();
-        }
-
-        public todoItems(string Text) //생성자를 통해 객체를 생성하는 곳에서 Text 데이터를 받아옴
         public int Id;
         public string Todo;
         //생성자를 통해 객체를 생성하는 곳에서 데이터 받아오기
@@ -50,40 +44,22 @@ namespace My__Everything
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
-            int recordId = GetRecordId(); // 데이터베이스 레코드의 ID를 얻어오는 메소드임.
-
-            // 데이터베이스 연결 설정
             string connectionString = "Server=localhost;Database=todo_db;Uid=root;Pwd=1234;";
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
+                //서버 실행
                 connection.Open();
 
-                // 데이터베이스 레코드 삭제 쿼리
+                // DELETE 쿼리 실행
                 string deleteQuery = "DELETE FROM myeverything_todolist WHERE id = @id";
-
-                using (MySqlCommand deleteCommand = new MySqlCommand(deleteQuery, connection))
+                using (MySqlCommand cmd = new MySqlCommand(deleteQuery, connection))
                 {
-                    deleteCommand.Parameters.AddWithValue("@id", recordId);
-
-                    // 삭제 쿼리
-                    int rowsAffected = deleteCommand.ExecuteNonQuery();
-
-                    // 데이터베이스에서 삭제가 성공적으로 이루어졌을 때
-                    if (rowsAffected > 0)
-                    {
-                        // 화면에서 객체를 제거하고 메모리에서 해제
-                        if (Parent != null)
-                        {
-                            Parent.Controls.Remove(this);
-                            Dispose();
-                        }
-
-                        Console.WriteLine("데이터베이스 레코드가 성공적으로 삭제되었습니다.");
-                    }
-                    else
-                    {
-                        Console.WriteLine("데이터베이스 레코드 삭제에 실패했습니다.");
+                    //
+                    cmd.Parameters.AddWithValue("@id", Id);
+                    //예외처리
+                    int deletenum = cmd.ExecuteNonQuery();
+                    if (deletenum > 0) {
+                        Console.WriteLine("데이터 DELETE 성공!!!!!");
                     }
                 }
             }
