@@ -79,6 +79,9 @@ namespace My__Everything
                 if (form.GetType().Name == "Form2")
                     form.Hide();
             }
+            // Form2를 갱신
+            homePage = new Form2();
+            homePage.MdiParent = this;
             homePage.Show();
             homePage.BringToFront();
             homePage.Location = new Point(0, 0);
@@ -91,6 +94,9 @@ namespace My__Everything
                 if (form.GetType().Name == "Form3")
                     form.Hide();
             }
+            // Form2를 갱신
+            todoPage = new Form3();
+            todoPage.MdiParent = this;
             todoPage.Show();
             todoPage.BringToFront();
             todoPage.Location = new Point(0, 0);
@@ -104,6 +110,8 @@ namespace My__Everything
                 if (form.GetType().Name == "Form4")
                     form.Hide();
             }
+            weatherPage = new Form4();
+            weatherPage.MdiParent = this;
             weatherPage.Show();
             weatherPage.BringToFront();
             weatherPage.Location = new Point(0, 0);

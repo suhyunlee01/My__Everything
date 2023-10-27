@@ -65,8 +65,12 @@ namespace My__Everything
             }
             this.Parent.Controls.Remove(this);
 
-            Form3 form3 = new Form3();
-            form3.CalcTodoNum();
+            //Form3을 새로 만들어서 보여줌
+            Form3 newForm3 = new Form3();
+            Form1 mainForm = Application.OpenForms.OfType<Form1>().FirstOrDefault();
+            newForm3.Show();
+            newForm3.MdiParent = mainForm;
+            newForm3.Location = new Point(0, 0);
 
         }
     }

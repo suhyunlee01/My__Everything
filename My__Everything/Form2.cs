@@ -18,12 +18,18 @@ namespace My__Everything
     {
         string jsonFilePath = "C:\\Users\\KOSTA\\Desktop\\새 폴더\\My__Everything\\My__Everything\\Data\\api_key.json";
         private string txtSearch;
+        private int gap;
         private string weatherKey;
         private string[] city = { "Seoul", "Busan", "Daegu", "Incheon", "Gwangju",
             "Daejeon", "Ulsan", "Sejong", "Gyeonggi-do", "Gangwon-do",
             "Chungcheongbuk-do", "Chungcheongnam-do", "Jeju", "Jeollabuk-do",
             "Jeollanam-do", "Gyeongsangbuk-do", "Gyeongsangnam-do"};
         private int currentIndex = 0;
+
+        //아이디 읽어올 배열
+        private int[] ids;
+        //투두 읽어올 배열
+        private string[] todoItems;
 
         Form4 weatherPage = new Form4();
 
@@ -70,6 +76,7 @@ namespace My__Everything
             getSeoulWeather();
 
             string connectionString = "Server=localhost;Database=todo_db;Uid=root;Pwd=1234;";
+            
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 //서버 연결
@@ -87,15 +94,16 @@ namespace My__Everything
                             // 각 행의 데이터를 읽어옴
                             int id = Convert.ToInt32(reader["id"]);
                             string todoItem = reader["todo"].ToString();
-                            addItems(todoItem, id);
+                            printItems(todoItem, id);
                         }
                     }
                 }
             }
         }
-        public void addItems(string todoItem, int id)
+        public void printItems(string todoItem, int id)
         {
-            int gap = 10;
+            gap = 10;
+
             todoItems items;
             //투두 아이템 컨트롤 객체 선언, 생성자에 텍스트 보내기
             items = new todoItems(todoItem, id);

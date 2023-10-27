@@ -99,7 +99,7 @@ namespace My__Everything
 
 
         //버튼 클릭 시 todoitem 추가
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             //텍스트가 비어있지 않을 때만 데이터베이스에 넣을거임~
             if (txtAddTodo.Text != "")
@@ -133,7 +133,6 @@ namespace My__Everything
                         }
                     }
 
-
                     //SELECT
                     //myeverything_todolist 테이블의 id와 todo를 가져오되, id가 가장 마지막의 것만 가져옴
                     string SelectQuery = "SELECT id, todo FROM myeverything_todolist ORDER BY id DESC LIMIT 1;";
@@ -153,6 +152,17 @@ namespace My__Everything
                             }
                         }
                     }
+
+
+                    // additem을 공백없이 보여주기 위해서 item 추가 시마다 Form3를 다시 생성하고 보여줌
+
+                    Form3 newForm3 = new Form3();
+                    Form1 mainForm = Application.OpenForms.OfType<Form1>().FirstOrDefault();
+                    newForm3.Show();
+                    newForm3.MdiParent = mainForm;
+                    this.Hide();
+                    newForm3.Location = new Point(0, 0);
+
                 }
             }
             else
@@ -188,5 +198,6 @@ namespace My__Everything
         {
             getQuote();
         }
+
     }
 }

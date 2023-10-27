@@ -66,7 +66,7 @@
             this.btnSearch.Size = new System.Drawing.Size(82, 54);
             this.btnSearch.TabIndex = 123;
             this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            this.btnSearch.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtAddTodo
             // 
