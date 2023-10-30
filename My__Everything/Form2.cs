@@ -36,7 +36,7 @@ namespace My__Everything
         public Form2()
         {
             InitializeComponent();
-
+            gap = 10;
             //api
             ApiKeyClass apiKeys;
             string jsonText = File.ReadAllText(jsonFilePath);
@@ -102,13 +102,14 @@ namespace My__Everything
         }
         public void printItems(string todoItem, int id)
         {
-            gap = 10;
 
             todoItems items;
             //투두 아이템 컨트롤 객체 선언, 생성자에 텍스트 보내기
             items = new todoItems(todoItem, id);
 
             items.Parent = panel1;
+
+            items.Left = 10;
 
             //컨트롤의 상단 위치
             items.Top = gap;
@@ -187,11 +188,11 @@ namespace My__Everything
         public void changeImg()
         {
 
-            if (int.Parse(DateTime.Now.ToString("HH")) >= 05 && int.Parse(DateTime.Now.ToString("HH")) < 18)
+            if (int.Parse(DateTime.Now.ToString("HH")) >= 05 && int.Parse(DateTime.Now.ToString("HH")) < 17)
             {
                 btnHomeWeahter.Image = Properties.Resources.w1;
             }
-            else if (int.Parse(DateTime.Now.ToString("HH")) >= 18 && int.Parse(DateTime.Now.ToString("HH")) < 21)
+            else if (int.Parse(DateTime.Now.ToString("HH")) >= 17 && int.Parse(DateTime.Now.ToString("HH")) < 21)
             {
                 btnHomeWeahter.Image = Properties.Resources.w2;
             }

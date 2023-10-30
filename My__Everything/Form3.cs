@@ -175,7 +175,7 @@ namespace My__Everything
         //todo아이템 개수 세어서 몇 개 남았는지 프린트하는 함수
         public void CalcTodoNum()
         {
-            // panel1의 자식 컨트롤 중에서 todoItems 클래스 형식의 객체
+            // panel1의 자식 컨트롤 중에서 todoItems 클래스 형식의 객체를 카운트 하도록 했음.
             label7.Text = panel1.Controls.OfType<todoItems>().Count().ToString() + " 개 남았습니다.";
         }
 

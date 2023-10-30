@@ -45,7 +45,10 @@
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.QuoteBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
@@ -54,7 +57,7 @@
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Pretendard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(612, 499);
+            this.label5.Location = new System.Drawing.Point(535, 510);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 19);
             this.label5.TabIndex = 68;
@@ -65,7 +68,7 @@
             this.lblquote.BackColor = System.Drawing.Color.White;
             this.lblquote.Font = new System.Drawing.Font("Pretendard SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblquote.ForeColor = System.Drawing.Color.Black;
-            this.lblquote.Location = new System.Drawing.Point(612, 407);
+            this.lblquote.Location = new System.Drawing.Point(535, 418);
             this.lblquote.Name = "lblquote";
             this.lblquote.Size = new System.Drawing.Size(259, 85);
             this.lblquote.TabIndex = 67;
@@ -77,7 +80,7 @@
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Pretendard ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
-            this.label3.Location = new System.Drawing.Point(611, 360);
+            this.label3.Location = new System.Drawing.Point(534, 358);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 29);
             this.label3.TabIndex = 66;
@@ -85,10 +88,10 @@
             // 
             // QuoteBox
             // 
-            this.QuoteBox.Image = ((System.Drawing.Image)(resources.GetObject("QuoteBox.Image")));
-            this.QuoteBox.Location = new System.Drawing.Point(581, 329);
+            this.QuoteBox.BackColor = System.Drawing.Color.White;
+            this.QuoteBox.Location = new System.Drawing.Point(508, 335);
             this.QuoteBox.Name = "QuoteBox";
-            this.QuoteBox.Size = new System.Drawing.Size(308, 246);
+            this.QuoteBox.Size = new System.Drawing.Size(381, 247);
             this.QuoteBox.TabIndex = 65;
             this.QuoteBox.TabStop = false;
             // 
@@ -200,10 +203,31 @@
             // 
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(59, 329);
+            this.panel1.Location = new System.Drawing.Point(59, 387);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(505, 246);
+            this.panel1.Size = new System.Drawing.Size(430, 195);
             this.panel1.TabIndex = 138;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Pretendard ExtraBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(132)))), ((int)(((byte)(252)))));
+            this.label2.Location = new System.Drawing.Point(84, 355);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 29);
+            this.label2.TabIndex = 139;
+            this.label2.Text = "TO DO";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Location = new System.Drawing.Point(59, 333);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(430, 247);
+            this.pictureBox1.TabIndex = 140;
+            this.pictureBox1.TabStop = false;
             // 
             // Form2
             // 
@@ -211,6 +235,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(943, 608);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblquote);
@@ -223,11 +248,13 @@
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.lbltemp);
             this.Controls.Add(this.btnHomeWeahter);
+            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.QuoteBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,5 +276,7 @@
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Timer timer3;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

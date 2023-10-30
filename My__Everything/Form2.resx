@@ -118,31 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="QuoteBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAATUAAAD1CAYAAAAxgGIEAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAABHBJREFUeF7t2+1R3GYUgFFKoINQAiVQQjowJVCCO7A7IB3YHVCCS6AESiD3Rdrx
-        ZOzEOLHj1TPnzNxBq6/994ykFRev9fz8fDlzN3M/8zjzNAPwM6zGPMy8m7nZM/RjrBPuJwf4VVbkbmcu
-        9zR9v3XwzIcZgHPxErc9U683B13vBwOco3d7rr5tdn4z43kZcO7WneQ/347ODusKDeAo7vd8fWk2Xs24
-        5QSO5m7P2F/NhvWqBsARXe8p28yK9doGwFE97DnbzAqvbgBHt72kOwvrWRrA0b0/RW29pQtwdE+nqLn1
-        BCp+W1H7tC0DHN7tipr/HgAq7lbUACreihpQImpAiqgBKaIGpIgakCJqQIqoASmiBqSIGpAiakCKqAEp
-        ogakiBqQImpAiqgBKaIGpIgakCJqQIqoASmiBqSIGpAiakCKqAEpogakiBqQImpAiqgBKaIGpIgakCJq
-        QIqoASmiBqSIGpAiakCKqAEpogakiBqQImpAiqgBKaIGpIgakCJqQIqoASmiBqSIGpAiakCKqAEpogak
-        iBqQImpAiqgBKaIGpIgakCJqQIqoASmiBqSIGpAiakCKqAEpogakiBqQImpAiqgBKaIGpIgakCJqQIqo
-        ASmiBqSIGpAiakCKqAEpogakiBqQImpAiqgBKaIGpIgakCJqQIqoASmiBqSIGpAiakCKqAEpogakiBqQ
-        ImpAiqgBKaIGpIgakCJqQIqoASmiBqSIGpAiakCKqAEpogakiBqQImpAiqgBKaIGpIgakCJqQIqoASmi
-        BqSIGpAiakCKqAEpogakiBqQImpAiqgBKaIGpIgakCJqQIqoASmiBqSIGpAiakCKqAEpogakiBqQImpA
-        iqgBKaIGpIgakCJqQIqoASmiBqSIGpAiakCKqAEpogakiBqQImpAiqgBKaIGpIgakCJqQIqoASmiBqSI
-        GpAiakCKqAEpogakiBqQImpAiqgBKaIGpIgakCJqQIqoASmiBqSIGpAiakCKqAEpogakiBqQImpAiqgB
-        KaIGpIgakCJqQIqoASmiBqSIGpAiakCKqAEpogakiBqQImpAiqgBKaIGpIgakCJqQIqoASmiBqSIGpAi
-        akCKqAEpogakiBqQImpAiqgBKaIGpIgakCJqQIqoASmiBqSIGpAiakCKqAEpogakiBqQImpAiqgBKaIG
-        pIgakCJqQIqoASmiBqSIGpAiakCKqAEpogakiBqQImpAiqgBKaIGpIgakCJqQIqoASmiBqSIGpAiakDK
-        S9Qet2WAw/t9Re3DtgxweDcram+3ZYBju1jm7832EeDQPr5EbZkPn7Z1AId1uyftJWq32zqAQ3rcc/bZ
-        WrltAzicz1dpJ7PSszXgiO73jH1pNt5t+wAcwrrDvNoT9nWzg1c8gCP4dtBOZkdhA87Z64N2MgesX0T9
-        eACcmz9mLvdUfZ858Grm/czTDMCv9DBzs+fpv5kTrbitK7d1UoED/i/rbnFdWP2YmP2d+YLr9SXGGPOT
-        ZjXmX9xiXlz8CSEQ9dgVq8+2AAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="btnHomeWeahter.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAz8AAAD1CAYAAAB+zksMAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL

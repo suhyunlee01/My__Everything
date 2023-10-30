@@ -127,11 +127,11 @@ namespace My__Everything
         public void changeImg()
         {
 
-            if (int.Parse(DateTime.Now.ToString("HH")) >= 05 && int.Parse(DateTime.Now.ToString("HH")) < 18)
+            if (int.Parse(DateTime.Now.ToString("HH")) >= 05 && int.Parse(DateTime.Now.ToString("HH")) < 17)
             {
                 btnHomeWeahter.Image = Properties.Resources.w1;
             }
-            else if (int.Parse(DateTime.Now.ToString("HH")) >= 18 && int.Parse(DateTime.Now.ToString("HH")) < 21)
+            else if (int.Parse(DateTime.Now.ToString("HH")) >= 17 && int.Parse(DateTime.Now.ToString("HH")) < 21)
             {
                 btnHomeWeahter.Image = Properties.Resources.w2;
             }
