@@ -1,7 +1,7 @@
 # My__Everything
 💙내 하루의 일정을 관리해주는 Window Forms 어플리케이션💙
 
-[프로젝트 노션 페이지 바로가기](https://jewel-woodpecker-781.notion.site/My-Everything-443f3fdbaa8b434588302e91fb8059b7)
+[My Everything 프로젝트 노션 페이지 바로가기](https://jewel-woodpecker-781.notion.site/My-Everything-443f3fdbaa8b434588302e91fb8059b7)
 
 
 
