@@ -49,4 +49,4 @@
 
 ## 개발 & 학습 기록
 
-[프로젝트 개발 및 학습 기록 바로가기](https://jewel-woodpecker-781.notion.site/C-Net-f480bcbfe9d940558166452d18f942de?pvs=21)
+[프로젝트 개발 및 학습 기록 바로가기](https://jewel-woodpecker-781.notion.site/My-Everything-443f3fdbaa8b434588302e91fb8059b7)
